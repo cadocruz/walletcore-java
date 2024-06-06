@@ -97,6 +97,7 @@
                     <schemas>
                         <schema>wallet</schema>
                     </schemas>
+                    <cleanDisabled>false</cleanDisabled>
                 </configuration>
                 <dependencies>
                     <dependency>
