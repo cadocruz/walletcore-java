@@ -1,6 +1,6 @@
 package org.cadocruz.walletcore.application.usecase.transaction.create;
 
-import org.cadocruz.walletcore.domain.entity.Transaction;
+import org.cadocruz.walletcore.domain.models.Transaction;
 
 import java.math.BigDecimal;
 

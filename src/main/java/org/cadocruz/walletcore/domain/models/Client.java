@@ -1,8 +1,7 @@
-package org.cadocruz.walletcore.domain.entity;
+package org.cadocruz.walletcore.domain.models;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 
 import java.time.Instant;
@@ -21,6 +20,10 @@ public class Client {
         final var id = UUID.randomUUID().toString();
         final var now = Instant.now();
         return new Client(id, name, email, now, now);
+    }
+
+    public static Client with(String id, String name, String email, Instant createdAt, Instant updatedAt) {
+        return new Client(id, name, email, createdAt, updatedAt);
     }
 
     public void validate() {

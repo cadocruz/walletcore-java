@@ -1,8 +1,7 @@
-package org.cadocruz.walletcore.domain.entity;
+package org.cadocruz.walletcore.domain.models;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -18,10 +17,14 @@ public class Account {
     private Instant createdAt;
     private Instant updatedAt;
 
-    public static Account newAccount(String clientID, BigDecimal balance) {
+    public static Account newAccount(final String clientID, final BigDecimal balance) {
         var id = UUID.randomUUID().toString();
         var now = Instant.now();
         return new Account(id, clientID, balance, now, now);
+    }
+
+    public static Account with(final String id, final String clientID, final BigDecimal balance, final Instant createdAt, final Instant updatedAt) {
+        return new Account(id, clientID, balance, createdAt, updatedAt);
     }
 
     public void validate() {

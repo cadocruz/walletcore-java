@@ -1,7 +1,5 @@
 package org.cadocruz.walletcore.application.usecase.transaction.create;
 
-import org.cadocruz.walletcore.domain.entity.Account;
-
 import java.math.BigDecimal;
 
 public record CreateTransactionInput(

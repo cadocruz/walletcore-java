@@ -1,7 +1,6 @@
 package org.cadocruz.walletcore.entity;
 
-import org.cadocruz.walletcore.domain.entity.Account;
-import org.cadocruz.walletcore.domain.entity.Client;
+import org.cadocruz.walletcore.domain.models.Account;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

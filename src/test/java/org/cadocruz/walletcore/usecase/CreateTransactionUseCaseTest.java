@@ -2,14 +2,13 @@ package org.cadocruz.walletcore.usecase;
 
 import org.cadocruz.walletcore.application.usecase.transaction.create.CreateTransactionInput;
 import org.cadocruz.walletcore.application.usecase.transaction.create.CreateTransactionUseCase;
-import org.cadocruz.walletcore.domain.entity.Account;
-import org.cadocruz.walletcore.domain.entity.Client;
+import org.cadocruz.walletcore.domain.models.Account;
+import org.cadocruz.walletcore.domain.models.Client;
 import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 import org.cadocruz.walletcore.domain.gateway.TransactionGateway;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.AdditionalAnswers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;

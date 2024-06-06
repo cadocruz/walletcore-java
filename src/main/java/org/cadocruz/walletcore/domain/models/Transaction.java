@@ -1,4 +1,4 @@
-package org.cadocruz.walletcore.domain.entity;
+package org.cadocruz.walletcore.domain.models;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.Objects;
 import java.util.UUID;
 
 @Getter

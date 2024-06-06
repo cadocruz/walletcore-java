@@ -1,7 +1,7 @@
 package org.cadocruz.walletcore.application.usecase.account.create;
 
 import org.cadocruz.walletcore.application.UseCase;
-import org.cadocruz.walletcore.domain.entity.Account;
+import org.cadocruz.walletcore.domain.models.Account;
 import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 
 import java.util.Objects;

@@ -1,12 +1,11 @@
 package org.cadocruz.walletcore.entity;
 
-import org.cadocruz.walletcore.domain.entity.Account;
-import org.cadocruz.walletcore.domain.entity.Client;
-import org.cadocruz.walletcore.domain.entity.Transaction;
+import org.cadocruz.walletcore.domain.models.Account;
+import org.cadocruz.walletcore.domain.models.Client;
+import org.cadocruz.walletcore.domain.models.Transaction;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
