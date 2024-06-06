@@ -1,4 +1,13 @@
 package org.cadocruz.walletcore.application.usecase.client.create;
 
-public class CreateClientInput {
+public record CreateClientInput(
+        String name,
+        String email
+) {
+    public static CreateClientInput with(
+            String aName,
+            String aEmail
+    ) {
+        return new CreateClientInput(aName, aEmail);
+    }
 }

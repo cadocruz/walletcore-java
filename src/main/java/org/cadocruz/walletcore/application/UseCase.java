@@ -1,2 +1,5 @@
-package org.cadocruz.walletcore.application;public class UseCase {
+package org.cadocruz.walletcore.application;
+
+public abstract class UseCase<IN, OUT> {
+    public abstract OUT execute(IN input);
 }

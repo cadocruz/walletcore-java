@@ -1,9 +1,5 @@
-package org.cadocruz.walletcore.application.usecase.client.create;
+package org.cadocruz.walletcore.application.usecase.account.create;
 
 public record CreateAccountOutput(
         String id
-) {
-    public static CreateAccountOutput from(String id) {
-        return new CreateAccountOutput(id);
-    }
-}
+) {}
