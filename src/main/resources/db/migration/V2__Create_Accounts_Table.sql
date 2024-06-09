@@ -1,7 +1,7 @@
 Create table accounts (
     id varchar(255),
     client_id varchar(255),
-    balance int,
+    balance DECIMAL(10, 5),
     created_at date,
     updated_at date
 );

@@ -1,6 +1,6 @@
 package org.cadocruz.walletcore.infrastructure.client.dto;
 
-public record ClientResponse(
+public record CreateClientResponse(
         String id
 ) {
 }

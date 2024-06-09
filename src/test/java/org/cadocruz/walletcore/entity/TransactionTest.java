@@ -24,8 +24,6 @@ public class TransactionTest {
 
         final var actualTransaction = Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount);
 
-        actualTransaction.commit();
-
         assertNotNull(actualTransaction);
         assertNotNull(actualTransaction.getId());
         assertEquals(90.0, expectedAccountSender.getBalance().doubleValue());

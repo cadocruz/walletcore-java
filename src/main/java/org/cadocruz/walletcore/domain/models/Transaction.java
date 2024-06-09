@@ -10,8 +10,6 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Getter
-@Builder
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Transaction {
     private String id;
     private Account sender;
@@ -19,10 +17,24 @@ public class Transaction {
     private BigDecimal amount;
     private Instant createdAt;
 
+    private Transaction(String id, Account sender, Account recipient, BigDecimal amount, Instant createdAt) {
+        this.id = id;
+        this.sender = sender;
+        this.recipient = recipient;
+        this.amount = amount;
+        this.createdAt = createdAt;
+        validate();
+        commit();
+    }
+
     public static Transaction newTransaction(final Account sender, final Account recipient, final BigDecimal amount) {
         final var id = UUID.randomUUID().toString();
         Instant now = Instant.now();
         return new Transaction(id, sender, recipient, amount, now);
+    }
+
+    public static Transaction with(final String id, final Account sender, final Account recipient, final BigDecimal amount, final Instant createdAt) {
+        return new Transaction(id, sender, recipient, amount, createdAt);
     }
 
     public void validate() {
