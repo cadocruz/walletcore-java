@@ -1,4 +1,3 @@
-
 mysql:
   username: root
   password: root
@@ -14,3 +13,7 @@ server:
 spring:
   flyway:
     locations: classpath:db/migration/mysql
+  kafka:
+    bootstrap-servers: localhost:9092
+    admin:
+      auto-create: true

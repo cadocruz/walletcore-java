@@ -32,3 +32,12 @@ spring:
         "[hibernate.connection.provider_disables_autocommit]": true
         # Para aumentar a performance ao máximo, desabilitamos o auto-commit e o open-in-view.
         # https://vladmihalcea.com/why-you-should-always-use-hibernate-connection-provider_disables_autocommit-for-resource-local-jpa-transactions/
+  kafka:
+    bootstrap-servers: ${kafka.url}
+    admin:
+      auto-create: true
+topics:
+  transaction-created:
+    topic: transactions
+  balance-updated:
+    topic: balances
