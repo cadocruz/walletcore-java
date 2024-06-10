@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @MySQLGatewayTest
-public class MySQLClientGatewayTest {
+public class ClientMySQLGatewayTest {
 
     @Autowired
     ClientRepository clientRepository;

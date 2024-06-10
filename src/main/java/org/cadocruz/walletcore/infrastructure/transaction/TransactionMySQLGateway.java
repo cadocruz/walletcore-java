@@ -16,7 +16,7 @@ public class TransactionMySQLGateway implements TransactionGateway {
     }
 
     @Override
-    public Transaction create(final Transaction transaction) {
-        return transactionRepository.saveAndFlush(TransactionJpaEntity.from(transaction)).toAggregate();
+    public void create(final Transaction transaction) {
+        transactionRepository.saveAndFlush(TransactionJpaEntity.from(transaction));
     }
 }

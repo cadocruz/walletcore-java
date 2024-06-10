@@ -1,9 +1,9 @@
 package org.cadocruz.walletcore.application.usecase.transaction.create;
 
 import org.cadocruz.walletcore.application.UseCase;
-import org.cadocruz.walletcore.domain.models.Transaction;
 import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 import org.cadocruz.walletcore.domain.gateway.TransactionGateway;
+import org.cadocruz.walletcore.domain.models.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
@@ -30,6 +30,8 @@ public class CreateTransactionUseCase extends UseCase<CreateTransactionInput, Cr
         final var accountTo = accountGateway.findById(accountIdTo).orElse(null);
 
         final var transaction = Transaction.newTransaction(accountFrom, accountTo, amount);
+        accountGateway.update(accountFrom);
+        accountGateway.update(accountTo);
         transactionGateway.create(transaction);
         return CreateTransactionOutput.from(transaction);
     }
