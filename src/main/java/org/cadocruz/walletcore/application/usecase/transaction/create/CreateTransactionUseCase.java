@@ -5,9 +5,8 @@ import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 import org.cadocruz.walletcore.domain.gateway.TransactionGateway;
 import org.cadocruz.walletcore.domain.models.Transaction;
 import org.cadocruz.walletcore.infrastructure.events.EventDispatcher;
-import org.cadocruz.walletcore.infrastructure.events.EventService;
+import org.cadocruz.walletcore.infrastructure.events.Event;
 import org.cadocruz.walletcore.infrastructure.transaction.dto.BalanceUpdatedOutputDTO;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
@@ -16,15 +15,15 @@ public class CreateTransactionUseCase extends UseCase<CreateTransactionInput, Cr
 
     private final AccountGateway accountGateway;
     private final TransactionGateway transactionGateway;
-    private final EventService transactionCreatedEvent;
-    private final EventService balanceUpdatedEvent;
+    private final Event transactionCreatedEvent;
+    private final Event balanceUpdatedEvent;
     private final EventDispatcher eventDispatcher;
 
     public CreateTransactionUseCase(
             final AccountGateway accountGateway,
             final TransactionGateway transactionGateway,
-            @Qualifier("transactionCreated") final EventService transactionCreatedEvent,
-            @Qualifier("balanceUpdated") final EventService balanceUpdatedEvent,
+            final Event transactionCreatedEvent,
+            final Event balanceUpdatedEvent,
             final EventDispatcher eventDispatcher) {
         this.accountGateway = Objects.requireNonNull(accountGateway);
         this.transactionGateway = Objects.requireNonNull(transactionGateway);

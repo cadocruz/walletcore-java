@@ -2,7 +2,7 @@ package org.cadocruz.walletcore.infrastructure.events.impl;
 
 import org.cadocruz.walletcore.infrastructure.configuration.json.Json;
 import org.cadocruz.walletcore.infrastructure.events.EventHandler;
-import org.cadocruz.walletcore.infrastructure.events.EventService;
+import org.cadocruz.walletcore.infrastructure.events.Event;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class TransactionCreatedKafkaHandler implements EventHandler {
     }
 
     @Override
-    public void handle(EventService event) {
+    public void accept(Event event) {
         final var payload = Json.writeValueAsString(event.getPayload());
         kafkaTemplate.send("transactions", payload);
     }

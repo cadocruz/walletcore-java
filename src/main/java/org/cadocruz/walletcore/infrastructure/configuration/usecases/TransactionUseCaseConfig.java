@@ -4,7 +4,7 @@ import org.cadocruz.walletcore.application.usecase.transaction.create.CreateTran
 import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 import org.cadocruz.walletcore.domain.gateway.TransactionGateway;
 import org.cadocruz.walletcore.infrastructure.events.EventDispatcher;
-import org.cadocruz.walletcore.infrastructure.events.EventService;
+import org.cadocruz.walletcore.infrastructure.events.Event;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,15 +14,15 @@ public class TransactionUseCaseConfig {
 
     private final AccountGateway accountGateway;
     private final TransactionGateway transactionGateway;
-    private final EventService transactionCreatedEvent;
-    private final EventService balanceUpdatedEvent;
+    private final Event transactionCreatedEvent;
+    private final Event balanceUpdatedEvent;
     private final EventDispatcher eventDispatcher;
 
     public TransactionUseCaseConfig(
             final AccountGateway accountGateway,
             final TransactionGateway transactionGateway,
-            @Qualifier("transactionCreated") final EventService transactionCreatedEvent,
-            @Qualifier("balanceUpdated") final EventService balanceUpdatedEvent,
+            @Qualifier("transactionCreatedEvent") final Event transactionCreatedEvent,
+            @Qualifier("balanceUpdatedEvent") final Event balanceUpdatedEvent,
             final EventDispatcher eventDispatcher) {
         this.accountGateway = accountGateway;
         this.transactionGateway = transactionGateway;

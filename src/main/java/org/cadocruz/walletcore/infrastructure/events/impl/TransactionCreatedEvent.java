@@ -1,21 +1,21 @@
 package org.cadocruz.walletcore.infrastructure.events.impl;
 
-import org.cadocruz.walletcore.infrastructure.events.EventService;
+import org.cadocruz.walletcore.infrastructure.events.Event;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 
 @Service
-@Qualifier("balanceUpdated")
-public class BalanceUpdated implements EventService {
+@Qualifier("transactionCreated")
+public class TransactionCreatedEvent implements Event {
 
     private final String name;
     private Object payload;
 
-    public BalanceUpdated() {
+    public TransactionCreatedEvent() {
         super();
-        this.name = "BalanceUpdated";
+        this.name = "TransactionCreated";
     }
 
     @Override

@@ -7,7 +7,7 @@ import org.cadocruz.walletcore.domain.models.Client;
 import org.cadocruz.walletcore.domain.gateway.AccountGateway;
 import org.cadocruz.walletcore.domain.gateway.TransactionGateway;
 import org.cadocruz.walletcore.infrastructure.events.EventDispatcher;
-import org.cadocruz.walletcore.infrastructure.events.EventService;
+import org.cadocruz.walletcore.infrastructure.events.Event;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,7 +31,7 @@ public class CreateTransactionUseCaseTest {
     @Mock
     private TransactionGateway transactionGateway;
     @Mock
-    private EventService transactionCreatedEvent;
+    private Event transactionCreatedEvent;
     @Mock
     private EventDispatcher eventDispatcher;
     @InjectMocks
