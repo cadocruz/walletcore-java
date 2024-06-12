@@ -8,3 +8,9 @@ spring:
     console:
       enabled: true
       path: /h2
+  flyway:
+    enabled: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    admin:
+      auto-create: true

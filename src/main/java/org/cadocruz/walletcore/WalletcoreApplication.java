@@ -1,14 +1,8 @@
 package org.cadocruz.walletcore;
 
-import org.cadocruz.walletcore.infrastructure.events.EventDispatcher;
-import org.cadocruz.walletcore.infrastructure.events.impl.BalanceUpdatedKafkaHandler;
-import org.cadocruz.walletcore.infrastructure.events.impl.TransactionCreatedKafkaHandler;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.AbstractEnvironment;
-import org.springframework.kafka.core.KafkaTemplate;
 
 @SpringBootApplication
 public class WalletcoreApplication {
@@ -18,13 +12,6 @@ public class WalletcoreApplication {
         SpringApplication.run(WalletcoreApplication.class, args);
     }
 
-    @Bean
-    public ApplicationRunner runner(KafkaTemplate<String, Object> template, EventDispatcher dispatcher)  {
-        return args -> {
-            dispatcher.register("TransactionCreated", new TransactionCreatedKafkaHandler(template));
-            dispatcher.register("BalanceUpdated", new BalanceUpdatedKafkaHandler(template));
-        };
-    }
 
     //Bean
 //    ApplicationRunner runner(ClientRepository repository) {

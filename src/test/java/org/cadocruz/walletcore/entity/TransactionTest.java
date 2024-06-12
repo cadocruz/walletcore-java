@@ -4,6 +4,7 @@ import org.cadocruz.walletcore.domain.models.Account;
 import org.cadocruz.walletcore.domain.models.Client;
 import org.cadocruz.walletcore.domain.models.Transaction;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 
@@ -42,9 +43,7 @@ public class TransactionTest {
 
         final var expectedAmount = BigDecimal.valueOf(10.0);
 
-        final var actualTransaction = Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount);
-
-        final var actualException = assertThrows(RuntimeException.class, actualTransaction::validate);
+        final var actualException = assertThrows(RuntimeException.class, () -> Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount));
 
         assertEquals(expectedErrorMessage, actualException.getMessage());
 
@@ -60,9 +59,7 @@ public class TransactionTest {
 
         final var expectedAmount = BigDecimal.valueOf(10.0);
 
-        final var actualTransaction = Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount);
-
-        final var actualException = assertThrows(RuntimeException.class, actualTransaction::validate);
+        final var actualException = assertThrows(RuntimeException.class, () ->  Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount));
 
         assertEquals(expectedErrorMessage, actualException.getMessage());
 
@@ -81,9 +78,7 @@ public class TransactionTest {
 
         final var expectedAmount = BigDecimal.valueOf(100.0);
 
-        final var actualTransaction = Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount);
-
-        final var actualException = assertThrows(RuntimeException.class, actualTransaction::validate);
+        final var actualException = assertThrows(RuntimeException.class, () ->  Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount));
 
         assertEquals(expectedErrorMessage, actualException.getMessage());
 
@@ -102,9 +97,7 @@ public class TransactionTest {
 
         final var expectedAmount = BigDecimal.valueOf(0.0);
 
-        final var actualTransaction = Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount);
-
-        final var actualException = assertThrows(RuntimeException.class, actualTransaction::validate);
+        final var actualException = assertThrows(RuntimeException.class, () ->  Transaction.newTransaction(expectedAccountSender, expectedAccountRecipient, expectedAmount));
 
         assertEquals(expectedErrorMessage, actualException.getMessage());
 
