@@ -1,29 +1,29 @@
-POST http://localhost:8080/clients HTTP/1.1
+POST https://localhost:8443/clients HTTP/2
 Content-Type: application/json
 
 {
-  "name": "Jane Doe",
-  "email": "jane@j.com"
+  "name": "Teste Silva",
+  "email": "teste@s.com"
 }
 
 
 #########
 
-POST http://localhost:8080/accounts HTTP/1.1
+POST https://localhost:8443/accounts HTTP/2
 Content-Type: application/json
 
 {
-  "client_id" : "fe581b39-6d32-4f31-90cc-4d37e71f2678",
-  "balance": "5000"
+  "client_id" : "b9d67ace-a5a0-4941-a0d7-c7b848d33211",
+  "balance": "1000"
 }
 
 ###
 
-POST http://localhost:8080/transactions HTTP/1.1
+POST https://localhost:8443/transactions HTTP/2
 Content-Type: application/json
 
 {
   "account_id_from": "1c8c59ee-0b34-4de5-b9e5-16ad84a4c591",
-  "account_id_to": "497890dc-89c7-4ef5-b46b-ba0521f00f3b",
-  "amount": 250
+  "account_id_to": "4cdfd92a-c056-4c50-8777-a7a0dbd50d86",
+  "amount": 50
 }
