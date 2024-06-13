@@ -8,7 +8,6 @@ import org.springframework.core.env.AbstractEnvironment;
 public class WalletcoreApplication {
 
     public static void main(String[] args) {
-        System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "dev");
         SpringApplication.run(WalletcoreApplication.class, args);
     }
 
